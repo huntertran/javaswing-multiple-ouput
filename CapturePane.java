@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class CapturePane extends JPanel implements Consumer {
+public class CapturePane extends JPanel {
 
     /**
      *
@@ -19,7 +19,7 @@ public class CapturePane extends JPanel implements Consumer {
         add(new JScrollPane(output));
     }
 
-    @Override
+    // @Override
     public void appendText(final String text) {
         if (EventQueue.isDispatchThread()) {
             output.append(text);

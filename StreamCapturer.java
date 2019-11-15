@@ -6,15 +6,15 @@ public class StreamCapturer extends OutputStream {
 
     private StringBuilder buffer;
     private String prefix;
-    private Consumer consumer;
+    private CapturePane consumer;
     private PrintStream old;
 
-    public StreamCapturer(String prefix, Consumer consumer, PrintStream old) {
+    public StreamCapturer(String prefix, CapturePane capturePane, PrintStream old) {
         this.prefix = prefix;
         buffer = new StringBuilder(128);
         buffer.append("[").append(prefix).append("] ");
         this.old = old;
-        this.consumer = consumer;
+        this.consumer = capturePane;
     }
 
     @Override
